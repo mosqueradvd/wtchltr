@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
 const YT_PL_ITEMS = "https://www.googleapis.com/youtube/v3/playlistItems";
@@ -16,6 +17,7 @@ export async function getServerSideProps() {
 }
 
 export default function Home({ data }) {
+  console.log("dataYT", data);
   return (
     <div className={styles.container}>
       <Head>
@@ -27,6 +29,15 @@ export default function Home({ data }) {
         <h1 className={styles.title}>
           Welcome to <a href="#">Watch Later Feed!</a>
         </h1>
+
+        <div>
+          <p>
+            Go to{" "}
+            <Link href="/VideoPage">
+              <a>Video Page</a>
+            </Link>
+          </p>
+        </div>
 
         <ul className={styles.grid}>
           {data.items.map(({ id, snippet = {} }) => {
