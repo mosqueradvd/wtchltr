@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 
-import { Text } from "@geist-ui/react";
+import { Text, Grid, Card } from "@geist-ui/react";
 
 import styles from "../styles/Home.module.css";
 
@@ -9,7 +9,7 @@ const YT_PL_ITEMS = "https://www.googleapis.com/youtube/v3/playlistItems";
 
 export async function getServerSideProps() {
   const res = await fetch(
-    `${YT_PL_ITEMS}?part=snippet&maxResults=50&playlistId=PL9uwekurBrErSgziV1oozrRxY-KCmSgId&key=${process.env.YOUTUBE_APIKEY}`
+    `${YT_PL_ITEMS}?part=snippet&maxResults=50&playlistId=${process.env.PLAYLIST_ID}&key=${process.env.YOUTUBE_APIKEY}`
   );
   const data = await res.json();
   return {
@@ -27,25 +27,19 @@ export default function Home({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <Text h1>Welcome to Wtchltr</Text>
+      <Text h1>Welcome to Wtchltr</Text>
 
-        <ul className={styles.grid}>
-          {data.items.map(({ id, snippet = {} }) => {
-            const { title, thumbnails = {}, resourceId = {} } = snippet;
-            const { medium } = thumbnails;
-            return (
-              <li key={id} className={styles.card}>
+      <Grid.Container gap={2} justify="center">
+        {data.items.map(({ id, snippet = {} }) => {
+          const { title, thumbnails = {}, resourceId = {} } = snippet;
+          const { medium } = thumbnails;
+          return (
+            <Grid xs={6}>
+              <Card key={id}>
                 <a
                   href={`https://www.youtube.com/watch?v=${resourceId.videoId}`}
                 >
                   <p>
-                    {/* <img
-                      width={medium.width}
-                      height={medium.height}
-                      src={medium.url}
-                      alt=""
-                    /> */}
                     <Image
                       src={medium.url}
                       width={medium.width}
@@ -54,11 +48,11 @@ export default function Home({ data }) {
                   </p>
                   <h3>{title}</h3>
                 </a>
-              </li>
-            );
-          })}
-        </ul>
-      </main>
+              </Card>
+            </Grid>
+          );
+        })}
+      </Grid.Container>
 
       <footer className={styles.footer}>
         <a
