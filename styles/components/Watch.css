@@ -1,18 +1,29 @@
 .main_container {
-  padding: 3em;
   background-color: #020304;
 }
 .videoPlayer__container {
   border-radius: 22px;
   overflow: hidden;
   z-index: 1;
+  margin: 2em 1em;
 }
 
 .thumbnail {
-  border-radius: 16px;  
+  border-radius: 16px;
+  margin: 2em 1em;
 }
-/* 
-.scroll {
-  height: 300px;
-  /* overflow-y: scroll; 
-} */
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+  .videoPlayer__container {
+    border-radius: 0;
+    height: auto;
+    margin: 0;
+  }
+  .thumbnail {
+    margin: 0;
+  }
+}

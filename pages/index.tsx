@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Image from 'next/image'
 
 import { GetServerSideProps } from 'next'
-import { Text, Grid, Card } from '@geist-ui/react'
+import { Text, Grid, Card, Input, Image } from '@geist-ui/react'
 
 import styles from '../styles/Home.module.css'
+import { Search } from '@geist-ui/react-icons'
 
 const YT_PL_ITEMS = 'https://www.googleapis.com/youtube/v3/playlistItems'
 
@@ -16,13 +16,12 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const data = await res.json()
   return {
     props: {
-      data,
-    },
+      data
+    }
   }
 }
 
 export default function Home({ data }) {
-  console.log('print data >>>', data)
   return (
     <div className={styles.container}>
       <Head>
@@ -30,29 +29,49 @@ export default function Home({ data }) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Text h1>Wtchltr</Text>
+      <Text h1 style={{ color: 'wheat', textAlign: 'initial' }}>
+        Wtchltr
+      </Text>
+      <Input
+        icon={<Search color='white' size={28} />}
+        placeholder='Search somethig'
+        width='100%'
+      />
 
-      <Grid.Container gap={2} justify='center'>
+      <Grid.Container justify='center' style={{ marginTop: '5rem' }}>
         {data.items.map(({ id, snippet = {} }, index: number) => {
-          const { title, thumbnails = {}, resourceId = {} } = snippet
+          const {
+            title,
+            thumbnails = {},
+            resourceId = {},
+            description
+          } = snippet
           const { medium } = thumbnails
-          const { videoId } = resourceId
+          const subText = description.substring(0, 66)
           return (
-            <Grid xs={24} md={8} sm={12}>
-              <Link href={`/watch/${videoId}`}>
-                <Card key={index}>
-                  <a
-                    href={`https://www.youtube.com/watch?v=${resourceId.videoId}`}
-                  >
-                    <p>
-                      <Image
-                        src={medium.url}
-                        width={medium.width}
-                        height={medium.height}
-                      />
-                    </p>
-                    <h3>{title}</h3>
-                  </a>
+            <Grid xs={24} md={8} sm={12} key={index}>
+              <Link href={`watch/${id}`}>
+                <Card
+                  width='auto'
+                  style={{
+                    margin: '1em 0.5em 3em',
+                    cursor: 'pointer'
+                  }}
+                  type='dark'
+                  shadow
+                >
+                  <Image
+                    src={medium.url}
+                    height='auto'
+                    width='auto'
+                    style={{ objectFit: 'cover', margin: 0 }}
+                  />
+                  <Text h4 style={{ marginBottom: '0' }}>
+                    {title}
+                  </Text>
+                  <Text type='secondary' small>
+                    {subText}...
+                  </Text>
                 </Card>
               </Link>
             </Grid>

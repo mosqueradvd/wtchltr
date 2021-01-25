@@ -1076,6 +1076,11 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@geist-ui/react-icons@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@geist-ui/react-icons/-/react-icons-1.0.1.tgz#5da112bbc98216bf05da3aabbd7d21594440b209"
+  integrity sha512-/phre1NwXT0Mrxcq3yb+KksJ16/ykptgxI7+jh5pmDZfxnIMPlBWFBGDK0yw96oi752Wuo24X6+tkWjVe/g5Bg==
+
 "@geist-ui/react@^2.1.0-canary.2":
   version "2.1.0-canary.2"
   resolved "https://registry.yarnpkg.com/@geist-ui/react/-/react-2.1.0-canary.2.tgz#cc90f193bd41c99e880413cda2dd867d43ef0063"
@@ -1838,9 +1843,9 @@ camelcase@^6.0.0:
   integrity sha512-c7wVvbw3f37nuobQNtgsgG9POC9qMbNuMQmTCqZv23b6MIz0fcYpBiOlv9gEN/hdLdnZTDQhg6e9Dq5M1vKvfg==
 
 caniuse-lite@^1.0.30001093, caniuse-lite@^1.0.30001113, caniuse-lite@^1.0.30001157:
-  version "1.0.30001158"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001158.tgz#fce86d321369603c2bc855ee0e901a7f49f8310b"
-  integrity sha512-s5loVYY+yKpuVA3HyW8BarzrtJvwHReuzugQXlv1iR3LKSReoFXRm86mT6hT7PEF5RxW+XQZg+6nYjlywYzQ+g==
+  version "1.0.30001179"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001179.tgz"
+  integrity sha512-blMmO0QQujuUWZKyVrD1msR4WNDAqb/UPO1Sw2WWsQ7deoM5bJiicKnWJ1Y0NS/aGINSnKPIWBMw5luX+NDUCA==
 
 chalk@4.0.0:
   version "4.0.0"
