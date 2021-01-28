@@ -1,5 +1,5 @@
 .main_container {
-  background-color: #020304;
+  background-color: #121414;
 }
 .videoPlayer__container {
   border-radius: 22px;
@@ -8,9 +8,21 @@
   margin: 2em 1em;
 }
 
-.thumbnail {
-  border-radius: 16px;
-  margin: 2em 1em;
+.scroll {
+  height: 100vh;
+  padding-top: 7em;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.scroll > div {
+  flex: 0 0 auto;
+  margin: -3em 0.5em;
+}
+
+.thumbnail > img {
+  border-radius: 29px;
 }
 
 @media (max-width: 600px) {

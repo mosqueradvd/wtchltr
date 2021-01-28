@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 import { GetServerSideProps } from 'next'
-import { Text, Grid, Card, Input, Image } from '@geist-ui/react'
+import { Text, Grid, Card, Input, Image, Page } from '@geist-ui/react'
 
 import styles from '../styles/Home.module.css'
 import { Search } from '@geist-ui/react-icons'
@@ -29,14 +29,37 @@ export default function Home({ data }) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Text h1 style={{ color: 'wheat', textAlign: 'initial' }}>
-        Wtchltr
-      </Text>
-      <Input
-        icon={<Search color='white' size={28} />}
-        placeholder='Search somethig'
-        width='100%'
-      />
+      <Page.Header className={styles.Header}>
+        <div className={styles.Header_Container}>
+          <Text
+            h1
+            style={{
+              color: 'white',
+              textAlign: 'initial',
+              display: 'flex',
+              marginRight: '1em'
+            }}
+          >
+            Wtchltr
+          </Text>
+          <Input
+            icon={<Search color='white' size={28} />}
+            placeholder='Search somethig'
+            width='100%'
+            style={{ color: 'white' }}
+          />
+        </div>
+        <ul>
+          <li>
+            <Image
+              src='https://randomuser.me/api/portraits/women/17.jpg'
+              width='50'
+              height='auto'
+              style={{ borderRadius: '9px' }}
+            />
+          </li>
+        </ul>
+      </Page.Header>
 
       <Grid.Container justify='center' style={{ marginTop: '5rem' }}>
         {data.items.map(({ id, snippet = {} }, index: number) => {
@@ -55,7 +78,8 @@ export default function Home({ data }) {
                   width='auto'
                   style={{
                     margin: '1em 0.5em 3em',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    height: '400px'
                   }}
                   type='dark'
                   shadow

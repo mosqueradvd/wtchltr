@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #020304;
+  background: #121414;
 }
 
 .grid_container {
@@ -106,6 +106,11 @@
   box-shadow: -20px 20px 60px #abacad, 20px -20px 60px #fff;
 }
 
+.video_card {
+  margin: '1em 0.5em 3em';
+  cursor: 'pointer';
+  height: '400px';
+}
 .card:hover,
 .card:focus,
 .card:active {
@@ -153,9 +158,26 @@
   position: relative;
 }
 
+.Header {
+  display: flex;
+  align-items: center;
+}
+
+.Header_Container {
+  padding: 0;
+  width: 100%;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+  .Header_Container {
+    width: 100%;
+    padding: 0 1.5em;
+  }
+  .container {
+    padding: 0;
   }
 }

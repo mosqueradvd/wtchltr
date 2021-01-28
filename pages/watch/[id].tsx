@@ -1,7 +1,6 @@
 import ReactPlayer from 'react-player'
-import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { Grid, Card } from '@geist-ui/react'
+import { Grid, Image } from '@geist-ui/react'
 import { GetServerSideProps } from 'next'
 
 const YT_PL_ITEMS = 'https://www.googleapis.com/youtube/v3/playlistItems'
@@ -16,15 +15,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
       data
     }
   }
-}
-
-const MockItem = () => {
-  return (
-    <Card
-      shadow
-      style={{ width: '100%', height: '50px', backgroundColor: 'black' }}
-    />
-  )
 }
 
 const WatchVideo = ({ data }) => {
@@ -51,7 +41,7 @@ const WatchVideo = ({ data }) => {
               const { medium } = thumbnails
               return (
                 <div className='thumbnail' key={index}>
-                  <Image src={medium.url} width='auto' height='auto' />
+                  <Image src={medium.url} />
                 </div>
               )
             })}
