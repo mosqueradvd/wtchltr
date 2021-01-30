@@ -158,24 +158,10 @@
   position: relative;
 }
 
-.Header {
-  display: flex;
-  align-items: center;
-}
-
-.Header_Container {
-  padding: 0;
-  width: 100%;
-}
-
 @media (max-width: 600px) {
   .grid {
     width: 100%;
     flex-direction: column;
-  }
-  .Header_Container {
-    width: 100%;
-    padding: 0 1.5em;
   }
   .container {
     padding: 0;
