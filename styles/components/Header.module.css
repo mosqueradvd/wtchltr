@@ -1,0 +1,12 @@
+.Header {
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .Header {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}

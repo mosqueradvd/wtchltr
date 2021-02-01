@@ -1,10 +1,15 @@
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
+  padding: 0 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: #121414;
+}
+
+.grid_container {
+  margin-top: 5rem;
 }
 
 .main {
@@ -98,8 +103,14 @@
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
+  box-shadow: -20px 20px 60px #abacad, 20px -20px 60px #fff;
 }
 
+.video_card {
+  margin: '1em 0.5em 3em';
+  cursor: 'pointer';
+  height: '400px';
+}
 .card:hover,
 .card:focus,
 .card:active {
@@ -122,9 +133,37 @@
   height: 1em;
 }
 
+.card_thumbnail {
+  border-radius: 25px;
+  background-color: black;
+}
+.card_thumbnail_text {
+  top: 0;
+  left: 0;
+  margin: -1;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  padding-top: 6em;
+  padding-left: 1em;
+  position: absolute;
+  background: linear-gradient(
+    90deg,
+    rgb(33 37 41 / 78%) 0%,
+    rgba(33, 37, 41, 0.4) 100%
+  );
+}
+
+.image {
+  position: relative;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+  .container {
+    padding: 0;
   }
 }

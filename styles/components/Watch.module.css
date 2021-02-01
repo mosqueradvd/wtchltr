@@ -1,0 +1,47 @@
+.container {
+  min-height: 100vh;
+  padding: 0 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #121414;
+}
+.main_container {
+  background-color: #121414;
+}
+.videoPlayer__container {
+  border-radius: 22px;
+  overflow: hidden;
+  z-index: 1;
+  margin: 2em 1em;
+}
+.scroll {
+  height: 270px;
+  padding-top: 7em;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.scroll::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+.scroll > div {
+  flex: 0 0 auto;
+  margin: -3em 0.5em;
+}
+@media (max-width: 600px) {
+  .videoPlayer__container {
+    border-radius: 0;
+    height: auto;
+    margin: 0;
+  }
+  .thumbnail {
+    margin: 0;
+  }
+  .container {
+    padding: 0;
+  }
+}
