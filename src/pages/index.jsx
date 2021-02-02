@@ -29,7 +29,7 @@ export default function Home({ data }) {
       <Header />
 
       <Grid.Container justify='center' style={{ marginTop: '5rem' }}>
-        {data.items.map(({ id, snippet = {} }, index) => {
+        {data.items.map(({ snippet = {} }, index) => {
           const {
             title,
             thumbnails = {},
