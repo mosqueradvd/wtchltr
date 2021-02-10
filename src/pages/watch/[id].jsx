@@ -1,6 +1,7 @@
+import Link from 'next/link'
 import ReactPlayer from 'react-player'
 import { useRouter } from 'next/router'
-import { Image, Grid } from '@geist-ui/react'
+import { Image, Grid, Text } from '@geist-ui/react'
 
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -40,13 +41,27 @@ const WatchVideo = ({ data }) => {
             </div>
           </Grid>
           <Grid xs={24} sm={24} md={24}>
+            <Text
+              h2
+              style={{
+                color: '#ccc',
+                width: '840px',
+                margin: '0 auto',
+                paddingTop: '3em'
+              }}
+            >
+              Videos to be watched
+            </Text>
             <div className={styles.scroll}>
               {data.items.map(({ snippet = {} }, index) => {
-                const { thumbnails = {} } = snippet
+                const { thumbnails = {}, resourceId = {} } = snippet
                 const { medium } = thumbnails
+                const { videoId } = resourceId
                 return (
                   <div className='thumbnail' key={index}>
-                    <Image src={medium.url} />
+                    <Link href={`${videoId}`}>
+                      <Image src={medium.url} style={{ cursor: 'pointer' }} />
+                    </Link>
                   </div>
                 )
               })}

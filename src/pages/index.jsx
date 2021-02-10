@@ -33,7 +33,7 @@ export default function Home({ data }) {
           const {
             title,
             thumbnails = {},
-            resourceId = { videoId },
+            resourceId = {},
             description
           } = snippet
           const { medium } = thumbnails
