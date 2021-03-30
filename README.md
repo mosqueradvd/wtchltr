@@ -1,3 +1,35 @@
+# Wtchltr
+
+This application allows you to view and delete videos that you have previously saved in your "watch later" playlist. The goal is to focus only on what matters when you want to watch a video you have saved for later. When we turn to the "watch later" playlist we find that it's a mess. Because there are a lot of videos in there. And deleting them one by one is, let's face it, a tedious job.
+
+## Screenshots
+
+<p align="center">
+  <img align="center" style="margin: 0 auto;" src="https://uploads-ssl.webflow.com/602368197f6437ef15a64fb3/602aa7934765f529ef9ff81e_Wtchltr%20Header-p-800.png">
+</p>
+
+<p align="center">
+  <img align="center" style="margin: 0 auto;" src="https://uploads-ssl.webflow.com/602368197f6437ef15a64fb3/602aa5974e301e87e53b347a_scrnli_2_4_2021_9-19-05%20AM-p-800.png">
+</p>
+
+<p align="center">
+  <img align="center" style="margin: 0 auto;" src="https://uploads-ssl.webflow.com/602368197f6437ef15a64fb3/602aa5a8d66e32eb15ad7f10_wtchltr.vercel.app_watch_1BfCnjr_Vjg(iPad%20Pro)-p-800.png">
+</p>
+
+<p align="center">
+  <img align="center" style="margin: 0 auto;" src="https://uploads-ssl.webflow.com/602368197f6437ef15a64fb3/602aa5b3f516c0b6b060db4e_Screen%20Capture_20201115233653-p-800.png">
+</p>
+
+## Tech Stack
+
+- Next.js {Front Framework}
+- GeistUI {Styles}
+- YouTube API {Public Playlists}
+
+## Live Preview 
+
+[Wtchltr](https://wtchltr.vercel.app/)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
